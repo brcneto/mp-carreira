@@ -1,0 +1,163 @@
+:root {
+  --cor-de-fundo: #ccc;
+  --branco: #fff;
+  --vermelho: #a41414e5;
+}
+/* Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,html {
+height: 100%;
+position:relative;
+overflow-x: hidden;
+font-family: 'Roboto', sans-serif;
+background: rgb(2,0,36);
+background: var(--cor-de-fundo);
+}
+
+a {
+text-decoration: none;
+color: var(--branco);
+}
+
+
+/* CABEÇALHO */
+#navbar {
+  background-color: var(--vermelho);
+  width: 100vw;
+  box-shadow: 0 2px 8px #333;
+}
+
+
+.navbar-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 90vw;
+height: 10vh;
+margin: 0 auto;
+color: #eee;
+}
+
+.navbar-logo a {
+  display: block;
+  height: 10vh;
+}
+
+.navbar-logo a img {
+  height: 100%;
+  width: 100%;
+}
+
+.nav-list{
+  display: flex;
+  gap: 1.3em;
+  list-style: none;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+/* CABEÇALHO Menu Mobile */
+
+.mobile-menu{
+display: none;
+cursor: pointer;
+}
+
+.mobile-menu div{
+width: 32px;
+height: 3px;
+background:#fff;
+margin: 8px;
+border-radius: 5px;
+transition: 0.3s;
+}
+
+
+.showcase-btn {
+  background-color: var(--vermelho);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-weight: 500;
+}
+
+
+@media (max-width:768px){
+body{
+  overflow-x: hidden;
+}
+.nav-list{
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  width: 100vw;
+  height: 90vh;
+  background:#a41414e5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in;
+
+}
+.nav-list li{
+  margin-left: 0;
+  opacity: 0;
+  color: #fff;
+}
+
+.mobile-menu{
+  display: block;
+}
+
+
+.nav-list.active{
+transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+from{
+  opacity: 0;
+  transform: translateX(50px);
+}
+to{
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+.mobile-menu.active .line1 {
+transform: rotate(-45deg) translate(-8px,8px);
+}
+.mobile-menu.active .line2 {
+opacity: 0;
+}
+.mobile-menu.active .line3 {
+transform: rotate(45deg) translate(-7px,-7px);
+}
+
+/* SHOWCASE MOBILE */
+
+#showcase {
+  height: 90  vh;
+}
+
+.showcase-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+}
+
+.about-us {
+  height: 100vh;
+}
+
+}
